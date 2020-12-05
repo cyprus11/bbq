@@ -1,0 +1,21 @@
+ru:
+  activerecord:
+    models:
+      user: Регистрация пользователя
+    errors:
+      models:
+        user:
+          attributes:
+            password_confirmation:
+              confirmation: должно совпадать с паролем
+            password:
+              too_short: слишком короткий
+              blank: не может быть пустым
+    attributes:
+      user:
+        email: Электронная почта
+        name: Имя
+        password: Пароль
+        password_confirmation: Подтверждение пароля
+        current_password: Текущий пароль
+        remember_me: Запомнить меня
