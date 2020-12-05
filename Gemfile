@@ -12,3 +12,7 @@ group :development, :test do
   gem 'sqlite3', '~> 1.4'
   gem 'pry'
 end
+
+group :production do
+  gem 'pg'
+end

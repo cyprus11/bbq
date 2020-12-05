@@ -88,6 +88,7 @@ GEM
     nokogiri (1.10.10)
       mini_portile2 (~> 2.4.0)
     orm_adapter (0.5.0)
+    pg (1.2.3)
     pry (0.13.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -156,6 +157,7 @@ PLATFORMS
 
 DEPENDENCIES
   devise (~> 4.7)
+  pg
   pry
   puma (~> 4.1)
   rails (~> 6.0.3, >= 6.0.3.4)
