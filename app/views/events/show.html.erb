@@ -12,7 +12,7 @@
             <h1><%= @event.title %></h1>
             <h3><%= @event.datetime %></h3>
             <h3>
-              <small><%= link_to @event.address, "https://yandex.ru/?text=#{@event.address}" %></small>
+              <small><%= link_to @event.address, "https://yandex.ru/maps/?text=#{@event.address}" %></small>
             </h3>
             <p><%= @event.description %></p>
           </div>
