@@ -25,3 +25,13 @@ ru:
         address: Адрес
         description: Описание
         datetime: Дата
+  controllers:
+    events:
+      created: Событие успешно создано.
+      updated: Событие успешно обновлено.
+      destroyed: Событие удалено.
+    users:
+      updated: Данные профиля успешно обновлены.
+  app:
+    name: Шашлыки
+    company: Хороший программист
