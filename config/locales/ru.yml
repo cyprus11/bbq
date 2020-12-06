@@ -2,6 +2,7 @@ ru:
   activerecord:
     models:
       user: Регистрация пользователя
+      event: Событие
     errors:
       models:
         user:
@@ -19,3 +20,8 @@ ru:
         password_confirmation: Подтверждение пароля
         current_password: Текущий пароль
         remember_me: Запомнить меня
+      event:
+        title: Название
+        address: Адрес
+        description: Описание
+        datetime: Дата
