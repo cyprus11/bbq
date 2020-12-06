@@ -5,6 +5,7 @@ ruby '2.7.2'
 
 gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
 gem 'devise', '~> 4.7'
+gem 'russian'
 gem 'puma', '~> 4.1'
 gem 'webpacker', '~> 4.0'
 
