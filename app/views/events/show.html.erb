@@ -2,7 +2,7 @@
   <div class="event-info row">
     <div class="col-md-12">
       <%= content_tag 'div', '',
-          class: 'event-background',
+                      class: 'event-background',
                       style: "background-image: url(#{asset_pack_path('media/images/event.jpg')})"
       %>
 
@@ -19,6 +19,13 @@
           <% if current_user_can_edit?(@event) %>
             <div class="buffer-top">
               <%= link_to t('views.edit_event_link'), edit_event_path(@event), class: 'btn btn-primary' %>
+            </div>
+            <div class="buffer-top">
+              <%= link_to t('views.remove_event_link'), event_path, method: :delete, data: { title: t('views.confirm.title'),
+                                                                                             confirm: t('views.remove_event_question'),
+                                                                                             commit: t('views.confirm.commit'),
+                                                                                             cancel: t('views.confirm.cancel')},
+                          class: 'btn btn-danger' %>
             </div>
           <% end %>
         </div>

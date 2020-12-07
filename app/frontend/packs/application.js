@@ -1,4 +1,5 @@
 require("@rails/ujs").start()
+require('data-confirm-modal')
 import "bootstrap/dist/js/bootstrap"
 import "../styles/application"
 

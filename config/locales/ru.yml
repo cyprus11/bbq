@@ -40,7 +40,7 @@ ru:
     few: "%{count} ошибки"
     many: "%{count} ошибок"
   views:
-    new_session_view: Вход
+    new_session_head: Вход
     new_session: Войти
     new_registration: Зарегистрироваться
     new_password: Забыл пароль?
@@ -61,6 +61,7 @@ ru:
     renew_btn: Обновить
     remove_acc: Удалить аккаунт
     remove_acc_question: Вы уверенны?
+    remove_event_question: Вы точно хотите удалить событие?
     back: Назад
     return: вернуться
     reg_user: Регистрация пользователя
@@ -70,6 +71,7 @@ ru:
     create_event_link: Создать событие
     new_event: Новое событие
     edit_event_link: Изменить
+    remove_event_link: Удалить
     profile_link: Профиль
     quit_link: Выйти
     come_in_link: Войти
@@ -77,3 +79,7 @@ ru:
     event_owner: Организовал
     user_not_events_owner_msg: Пользователь пока не организовал ни одного события
     need_current_password_msg: (нам нужен текущий пароль, чтобы подтвердить изменения)
+    confirm:
+      title: Удаление события.
+      commit: "Да, конечно."
+      cancel: "Нет, я передумал."
