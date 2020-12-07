@@ -18,7 +18,7 @@
           </div>
           <% if current_user_can_edit?(@event) %>
             <div class="buffer-top">
-              <%= link_to 'Изменить', edit_event_path(@event), class: 'btn btn-primary' %>
+              <%= link_to t('views.edit_event_link'), edit_event_path(@event), class: 'btn btn-primary' %>
             </div>
           <% end %>
         </div>

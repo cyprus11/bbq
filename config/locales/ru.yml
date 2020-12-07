@@ -39,3 +39,41 @@ ru:
     one: "%{count} ошибка"
     few: "%{count} ошибки"
     many: "%{count} ошибок"
+  views:
+    new_session_view: Вход
+    new_session: Войти
+    new_registration: Зарегистрироваться
+    new_password: Забыл пароль?
+    new_confirmation: Не получал инструкции для подтверждения?
+    new_unlock: Не получал инструкции для разблокировки?
+    omniauth: "Войти при помощи %{omni_utils}"
+    new_password_label: Новый пароль
+    edit_password: Смените ваш пароль
+    password_confirmation_label: Подстверждение пароля
+    change_password: Изменить пароль
+    min_password_length:
+      one: "%{count} символ минимум"
+      few: "%{count} символа минимум"
+      many: "%{count} символов минимум"
+    forgot_password: Забыли ваш пароль?
+    send_instructions_btn: Отправить инструкции по смене пароля
+    edit_user: Редактирование данных пользователя
+    renew_btn: Обновить
+    remove_acc: Удалить аккаунт
+    remove_acc_question: Вы уверенны?
+    back: Назад
+    return: вернуться
+    reg_user: Регистрация пользователя
+    save_btn: Сохранить
+    edit_event: Редактирование события
+    index_events: События
+    create_event_link: Создать событие
+    new_event: Новое событие
+    edit_event_link: Изменить
+    profile_link: Профиль
+    quit_link: Выйти
+    come_in_link: Войти
+    edit_profile: Редактирование профиля
+    event_owner: Организовал
+    user_not_events_owner_msg: Пользователь пока не организовал ни одного события
+    need_current_password_msg: (нам нужен текущий пароль, чтобы подтвердить изменения)
