@@ -24,7 +24,7 @@
               <%= link_to t('views.remove_event_link'), event_path, method: :delete, data: { title: t('views.confirm.title'),
                                                                                              confirm: t('views.remove_event_question'),
                                                                                              commit: t('views.confirm.commit'),
-                                                                                             cancel: t('views.confirm.cancel')},
+                                                                                             cancel: t('views.confirm.cancel') },
                           class: 'btn btn-danger' %>
             </div>
           <% end %>
@@ -36,7 +36,7 @@
   <div class="row">
     <div class="col-md-8">
       <div class="event-comments buffer-top">
-        <%= render partial: 'comments/form', locals: {comment: @new_comment || @event.comments.build} %>
+        <%= render partial: 'comments/form', locals: { comment: @new_comment || @event.comments.build } %>
         <div class="buffer-both">
           <%= render @event.comments.except(@new_comment) %>
         </div>
@@ -55,12 +55,14 @@
           </p>
         </div>
       </div>
-      <div class="event-subscription-form">
-        <h4>Я пойду:</h4>
-        <div>
-          <%= render partial: 'subscriptions/form', locals: {subscription: @new_subscription || @event.subscriptions.build} %>
+      <% if @event.user != current_user %>
+        <div class="event-subscription-form">
+          <h4>Я пойду:</h4>
+          <div>
+            <%= render partial: 'subscriptions/form', locals: { subscription: @new_subscription || @event.subscriptions.build } %>
+          </div>
         </div>
-      </div>
+      <% end %>
     </div>
   </div>
 </div>
