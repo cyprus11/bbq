@@ -32,13 +32,34 @@ ru:
       destroyed: Событие удалено.
     users:
       updated: Данные профиля успешно обновлены.
+    comments:
+      created: Комментарий добавлен.
+      destroyed: Комментарий удален.
+      error: Ошибка с комментарием.
+    subscriptions:
+      created: Вы подписанны на это событие.
+      destroyed: Участник отписан.
+      error: "Подписка/отписка на сработала."
   app:
     name: Шашлыки
     company: Хороший программист
   error:
-    one: "%{count} ошибка"
-    few: "%{count} ошибки"
-    many: "%{count} ошибок"
+    one: "В вашей форме %{count} ошибка"
+    few: "В вашей форме %{count} ошибки"
+    many: "В вашей форме %{count} ошибок"
+    many: "В вашей форме %{count} ошибок"
+  comments:
+    comment:
+      title: Удаление события.
+      destroy_confirm: 'Вы уверены, что хотите удалить этот комментарий?'
+      commit: "Да, конечно."
+      cancel: "Нет, я передумал."
+  subscriptions:
+    subscription:
+      title: Отписка от события.
+      destroy_confirm: 'Вы уверены, что хотите отписаться от события?'
+      commit: "Да, конечно."
+      cancel: "Нет, я передумал."
   views:
     new_session_head: Вход
     new_session: Войти

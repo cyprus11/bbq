@@ -32,4 +32,34 @@
       </div>
     </div>
   </div>
+
+  <div class="row">
+    <div class="col-md-8">
+      <div class="event-comments buffer-top">
+        <div class="buffer-both">
+          <%= render @event.comments %>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="event-owner">
+        <h4>Зовет:</h4>
+        <p><%= render @event.user %></p>
+      </div>
+      <div class="event-subscriptions">
+        <h4>Пойдут:</h4>
+        <div>
+          <p>
+            <%= render @event.subscriptions %>
+          </p>
+        </div>
+      </div>
+      <div class="event-subscription-form">
+        <h4>Я пойду:</h4>
+        <div>
+
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
