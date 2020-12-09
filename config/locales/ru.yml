@@ -3,6 +3,8 @@ ru:
     models:
       user: Регистрация пользователя
       event: Событие
+      subscription: Подписка
+      comment: Комментарий
     errors:
       models:
         user:
@@ -14,7 +16,7 @@ ru:
               blank: не может быть пустым
     attributes:
       user:
-        email: Электронная почта
+        email: Email
         name: Имя
         password: Пароль
         password_confirmation: Подтверждение пароля
@@ -25,6 +27,12 @@ ru:
         address: Адрес
         description: Описание
         datetime: Дата
+      subscription:
+        user_name: Имя
+        user_email: Email
+      comment:
+        body: Ваш комментарий
+        user_name: Имя
   controllers:
     events:
       created: Событие успешно создано.
@@ -36,7 +44,7 @@ ru:
       created: Комментарий добавлен.
       destroyed: Комментарий удален.
       error: Ошибка с комментарием.
-    subscriptions:
+    subscription:
       created: Вы подписанны на это событие.
       destroyed: Участник отписан.
       error: "Подписка/отписка на сработала."
@@ -47,14 +55,17 @@ ru:
     one: "В вашей форме %{count} ошибка"
     few: "В вашей форме %{count} ошибки"
     many: "В вашей форме %{count} ошибок"
-    many: "В вашей форме %{count} ошибок"
   comments:
+    form:
+      send_btn: Отправить
     comment:
       title: Удаление события.
       destroy_confirm: 'Вы уверены, что хотите удалить этот комментарий?'
       commit: "Да, конечно."
       cancel: "Нет, я передумал."
   subscriptions:
+    form:
+      subscribe_btn: 'Подписаться'
     subscription:
       title: Отписка от события.
       destroy_confirm: 'Вы уверены, что хотите отписаться от события?'
