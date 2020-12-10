@@ -32,6 +32,7 @@ ru:
         description: Описание
         datetime: Дата
       subscription:
+        user: Пользователь
         user_name: Имя
         user_email: Email
       comment:

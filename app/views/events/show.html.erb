@@ -20,7 +20,7 @@
             <div class="buffer-top">
               <%= link_to t('views.edit_event_link'), edit_event_path(@event), class: 'btn btn-primary' %>
             </div>
-            <div class="buffer-top">
+            <div class="buffer-top mb-1">
               <%= link_to t('views.remove_event_link'), event_path, method: :delete, data: { title: t('views.confirm.title'),
                                                                                              confirm: t('views.remove_event_question'),
                                                                                              commit: t('views.confirm.commit'),
@@ -47,14 +47,16 @@
         <h4>Зовет:</h4>
         <p><%= render @event.user %></p>
       </div>
-      <div class="event-subscriptions">
-        <h4>Пойдут:</h4>
-        <div>
-          <p>
-            <%= render @event.subscriptions.except(@new_subscriptions) %>
-          </p>
+      <% if @event.subscriptions.except(@new_subscriptions).any? %>
+        <div class="event-subscriptions">
+          <h4>Пойдут:</h4>
+          <div>
+            <p>
+              <%= render @event.subscriptions.except(@new_subscriptions) %>
+            </p>
+          </div>
         </div>
-      </div>
+      <% end %>
       <% if @event.user != current_user %>
         <div class="event-subscription-form">
           <h4>Я пойду:</h4>
