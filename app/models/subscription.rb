@@ -31,4 +31,8 @@ class Subscription < ApplicationRecord
   def event_user
     [event.user]
   end
+
+  def registered_users_emails
+    User.all.map(&:email)
+  end
 end
