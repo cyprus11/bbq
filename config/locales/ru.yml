@@ -14,6 +14,10 @@ ru:
             password:
               too_short: слишком короткий
               blank: не может быть пустым
+        event:
+          attributes:
+            datetime:
+              after: "должно быть после %{restriction}"
     attributes:
       user:
         email: Email

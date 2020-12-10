@@ -6,8 +6,8 @@ class Subscription < ApplicationRecord
 
   validates :user_name, presence: true, unless: :user_present?
   validates :user_email, presence: true, format: { with: EMAIL_REGEX }, unless: :user_present?
-
   validates :user, uniqueness: { scope: :event_id }, if: :user_present?
+  validates :user, exclusion: { in: :event_user }, if: :user_present?
   validates :user_email, uniqueness: { scope: :event_id }, unless: :user_present?
 
   def user_name
@@ -25,5 +25,9 @@ class Subscription < ApplicationRecord
   private
   def user_present?
     user.present?
+  end
+
+  def event_user
+    [event.user]
   end
 end

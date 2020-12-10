@@ -6,6 +6,7 @@ ruby '2.7.2'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
 gem 'devise', '~> 4.7'
 gem 'rails-i18n', '~> 6.0.0'
+gem 'validates_timeliness', '~> 5.0.0.beta2'
 gem 'puma', '~> 4.1'
 gem 'webpacker', '~> 4.0'
 
