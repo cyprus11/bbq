@@ -33,6 +33,6 @@ class Subscription < ApplicationRecord
   end
 
   def registered_users_emails
-    User.all.map(&:email)
+    User.where(email: user_email)&.map(&:email)
   end
 end
