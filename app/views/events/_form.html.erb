@@ -14,9 +14,10 @@
   <div class="form-group">
     <%= f.label :datetime %>
     <%= f.text_field :datetime,
+                     id: 'event_datetime',
                      class: 'datepicker-here form-control',
-                     'data-position' => 'right top',
                      'data-timepicker' => 'true',
+                     'data-position' => 'right top',
                      'data-date-format' => 'dd M yyyy',
                      'data-time-format' => 'hh:ii'
     %>

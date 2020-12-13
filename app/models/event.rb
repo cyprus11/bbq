@@ -7,6 +7,6 @@ class Event < ApplicationRecord
   validates :title, presence: true, length: { maximum: 255 }
   validates :address, presence: true
   validates :datetime, presence: true
-  validates_datetime :datetime, after: :today
-  validates_datetime :datetime, after: :now
+  validates :datetime, inclusion: {in: Date.current.. }
+  validates :datetime, inclusion: {in: Time.now.. }
 end
