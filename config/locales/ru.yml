@@ -5,6 +5,7 @@ ru:
       event: Событие
       subscription: Подписка
       comment: Комментарий
+      photo: Фотография
     errors:
       models:
         user:
@@ -22,6 +23,7 @@ ru:
       user:
         email: Email
         name: Имя
+        avatar: Аватар
         password: Пароль
         password_confirmation: Подтверждение пароля
         current_password: Текущий пароль
@@ -38,6 +40,8 @@ ru:
       comment:
         body: Ваш комментарий
         user_name: Имя
+      photo:
+        photo: Фотография
   controllers:
     events:
       created: Событие успешно создано.
@@ -53,6 +57,10 @@ ru:
       created: Вы подписанны на это событие.
       destroyed: Участник отписан.
       error: "Подписка/отписка на сработала."
+    photos:
+      error: Что-то не так с фотографией.
+      created: Вы добавили фотографию к событию.
+      destroyed: Вы удалили фотографию.
   app:
     name: Шашлыки
     company: Хороший программист

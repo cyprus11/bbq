@@ -7,17 +7,17 @@
       <%= link_to t('views.edit_profile'), edit_user_path(@user), class: "btn btn-default" %>
     </p>
   <% end %>
+</div>
 
-  <div class="row">
-    <div class="col-md-12">
-      <% if @user.events.any? %>
-        <h3><%= t('views.event_owner') %></h3>
-        <div class="row">
-          <%= render @user.events %>
-        </div>
-      <% else %>
-        <p class="buffer-top"><%= t('views.user_not_events_owner_msg') %></p>
-      <% end %>
-    </div>
+<div class="row">
+  <div class="col-md-12">
+    <% if @user.events.any? %>
+      <h3>Организовал</h3>
+      <div class="row">
+        <%= render @user.events %>
+      </div>
+    <% else %>
+    <p class="buffer-top">Пользователь пока не организовал ни одного события</p>
+    <% end %>
   </div>
 </div>
