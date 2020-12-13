@@ -29,7 +29,7 @@ Rails.application.configure do
   end
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
   config.action_mailer.perform_caching = false
 
@@ -43,6 +43,15 @@ Rails.application.configure do
   config.active_record.verbose_query_logs = true
 
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  config.action_mailer.delivery_method = :smtp
+
+  config.action_mailer.smtp_settings = {
+    address: 'smtp.gmail.com',
+    port: '587',
+    authentication: 'plain',
+    enable_starttls_auto: true
+  }
   # Raises error for missing translations.
   # config.action_view.raise_on_missing_translations = true
 

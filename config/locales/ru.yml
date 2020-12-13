@@ -84,6 +84,21 @@ ru:
       destroy_confirm: 'Вы уверены, что хотите отписаться от события?'
       commit: "Да, конечно."
       cancel: "Нет, я передумал."
+  event_mailer:
+    comment:
+      title: Новый комментарий
+      author: Автор
+      event: Событие
+      datetime: Состоится
+      owner: Организатор
+    subscription:
+      title: Новая подписка
+      name: Имя
+      email: Email
+      author: Автор
+      event: Событие
+      datetime: Состоится
+      owner: Организатор
   views:
     new_session_head: Вход
     new_session: Войти
