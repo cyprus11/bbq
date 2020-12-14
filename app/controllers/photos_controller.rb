@@ -31,7 +31,7 @@ class PhotosController < ApplicationController
   def notify_subscribers(event, photo)
     all_email =
       (event.subscriptions.pluck(:user_email) +
-        [event.user.email]).uniq.exclude(photo.user.email)
+        [event.user.email]).uniq - [photo.user.email]
 
     all_email.each do |mail|
       EventMailer.photo(event, photo, mail)
