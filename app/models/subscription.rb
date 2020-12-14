@@ -24,6 +24,7 @@ class Subscription < ApplicationRecord
   end
 
   private
+
   def user_present?
     user.present?
   end
@@ -33,6 +34,8 @@ class Subscription < ApplicationRecord
   end
 
   def registered_users_emails
-    User.where(email: user_email)&.map(&:email)
+    return [user_email] if User.exists?(email: user_email)
+
+    []
   end
 end
