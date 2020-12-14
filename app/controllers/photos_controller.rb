@@ -7,6 +7,7 @@ class PhotosController < ApplicationController
     @new_photo.user = current_user
 
     if @new_photo.save
+      notify_subscribers(@event, @new_photo)
       redirect_to @event, notice: t('controllers.photos.created')
     else
       render 'events/show', alert: t('controllers.photos.error')
@@ -27,6 +28,16 @@ class PhotosController < ApplicationController
 
   private
 
+  def notify_subscribers(event, photo)
+    all_email =
+      (event.subscriptions.pluck(:user_email) +
+        [event.user.email]).uniq.exclude(photo.user.email)
+
+    all_email.each do |mail|
+      EventMailer.photo(event, photo, mail)
+    end
+  end
+
   def set_event
     @event = Event.find(params[:event_id])
   end
@@ -35,7 +46,6 @@ class PhotosController < ApplicationController
     @photo = @event.photos.find(params[:id])
   end
 
-  # Only allow a trusted parameter "white list" through.
   def photo_params
     params.fetch(:photo, {}).permit(:photo)
   end

@@ -99,6 +99,12 @@ ru:
       event: Событие
       datetime: Состоится
       owner: Организатор
+    photo:
+      title: Новая фотография
+      author: Автор
+      event: Событие
+      datetime: Состоится
+      owner: Организатор
   views:
     new_session_head: Вход
     new_session: Войти
