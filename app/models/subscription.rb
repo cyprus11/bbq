@@ -34,8 +34,6 @@ class Subscription < ApplicationRecord
   end
 
   def registered_users_emails
-    return [user_email] if User.exists?(email: user_email)
-
-    []
+    User.exists?(email: user_email) ? [user_email] : []
   end
 end
