@@ -9,7 +9,7 @@ class Subscription < ApplicationRecord
   validates :user, uniqueness: { scope: :event_id }, if: :user_present?
   validates :user, exclusion: { in: :event_user }, if: :user_present?
   validates :user_email, uniqueness: { scope: :event_id }, unless: :user_present?
-  validates :user_email, exclusion: { in: :registered_users_emails }, unless: :user_present?
+  validates_with EmailValidator, unless: :user_present?
 
   def user_name
     return user.name if user.present?
@@ -31,9 +31,5 @@ class Subscription < ApplicationRecord
 
   def event_user
     [event.user]
-  end
-
-  def registered_users_emails
-    User.exists?(email: user_email) ? [user_email] : []
   end
 end
