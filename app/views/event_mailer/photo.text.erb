@@ -1,9 +1,9 @@
 <%= t '.title' %>
 -----
 
-<%= @comment.body %>
+<%= @photo.photo.url %>
 
-<%= t '.author' %>: <%= @comment.user_name %>
+<%= t '.author' %>: <%= @photo.user.name %>
 
 ---------------------------------
 <%= t '.event' %>: <%= @event.title %>
