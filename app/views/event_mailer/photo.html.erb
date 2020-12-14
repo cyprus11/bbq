@@ -1,5 +1,5 @@
 <h1><%= t '.title' %></h1>
-<p><%= @photo.photo.url %></p>
+<%= link_to @photo.photo.thumb.url, @photo.photo.url %>
 <p><%= t '.author' %>: <strong><%= @photo.user.name %></strong></p>
 
 <hr/>
