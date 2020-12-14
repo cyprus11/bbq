@@ -73,6 +73,7 @@ Rails.application.configure do
   end
 
   # Do not dump schema after migrations.
+  config.action_mailer.raise_delivery_errors = true
   config.active_record.dump_schema_after_migration = false
 
   ActionMailer::Base.smtp_settings = {
