@@ -101,7 +101,7 @@ Rails.application.configure do
   #   :domain         => 'still-cliffs-65918.heroku.com',
   #   :authentication => :plain
   # }
-  ActionMailer::Base.delivery_method = :smtp
+  # ActionMailer::Base.delivery_method = :smtp
 
   # Inserts middleware to perform automatic connection switching.
   # The `database_selector` hash is used to pass options to the DatabaseSelector
