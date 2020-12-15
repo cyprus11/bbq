@@ -45,7 +45,7 @@ class CommentsController < ApplicationController
         [comment.user&.email]
 
     all_email.each do |mail|
-      EventMailer.comment(event, comment, mail).deliver_now
+      EventMailer.comment(event, comment, mail).deliver_later
       # EmailNewCommentJob.set(wait: 10.seconds).perform_later(event, comment, mail)
     end
   end

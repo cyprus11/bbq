@@ -35,7 +35,7 @@ class PhotosController < ApplicationController
 
     all_email.each do |mail|
       # EmailNewPhotoJob.set(wait: 10.seconds).perform_later(event, photo, mail)
-      EventMailer.photo(event, photo, mail).deliver_now
+      EventMailer.photo(event, photo, mail).deliver_later
     end
   end
 
