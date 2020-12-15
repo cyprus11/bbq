@@ -79,8 +79,6 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
   config.action_mailer.raise_delivery_errors = false
   config.action_mailer.default_url_options = { host: 'https://still-cliffs-65918.herokuapp.com/', port: 443 }
-  # for mailjet only
-  config.action_mailer.delivery_method = :mailjet
 
   # settings for mailjet
   # ActionMailer::Base.smtp_settings = {
