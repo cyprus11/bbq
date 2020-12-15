@@ -77,6 +77,8 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.default_url_options = { host: 'https://still-cliffs-65918.herokuapp.com/', port: 443 }
 
   ActionMailer::Base.smtp_settings = {
     :port           => ENV['MAILGUN_SMTP_PORT'],
