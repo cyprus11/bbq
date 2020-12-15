@@ -80,15 +80,27 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = false
   config.action_mailer.default_url_options = { host: 'https://still-cliffs-65918.herokuapp.com/', port: 443 }
 
+  # settings for mailjet
   ActionMailer::Base.smtp_settings = {
-    :port           => ENV['MAILGUN_SMTP_PORT'],
-    :address        => ENV['MAILGUN_SMTP_SERVER'],
-    :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
-    :password       => ENV['MAILGUN_SMTP_PASSWORD'],
+    :port           => ENV['MAILJET_SMTP_PORT'],
+    :address        => ENV['MAILJET_SMTP_SERVER'],
+    :user_name      => ENV['MAILJET_SMTP_LOGIN'],
+    :password       => ENV['MAILJET_SMTP_PASSWORD'],
     :host           => 'https://still-cliffs-65918.herokuapp.com/',
     :domain         => 'still-cliffs-65918.heroku.com',
     :authentication => :plain
   }
+
+  # config for Mailgun
+  # ActionMailer::Base.smtp_settings = {
+  #   :port           => ENV['MAILGUN_SMTP_PORT'],
+  #   :address        => ENV['MAILGUN_SMTP_SERVER'],
+  #   :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
+  #   :password       => ENV['MAILGUN_SMTP_PASSWORD'],
+  #   :host           => 'https://still-cliffs-65918.herokuapp.com/',
+  #   :domain         => 'still-cliffs-65918.heroku.com',
+  #   :authentication => :plain
+  # }
   ActionMailer::Base.delivery_method = :smtp
 
   # Inserts middleware to perform automatic connection switching.
