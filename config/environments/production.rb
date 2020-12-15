@@ -83,6 +83,7 @@ Rails.application.configure do
     :address        => ENV['MAILGUN_SMTP_SERVER'],
     :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
     :password       => ENV['MAILGUN_SMTP_PASSWORD'],
+    :host           => 'https://still-cliffs-65918.herokuapp.com/',
     :domain         => 'still-cliffs-65918.heroku.com',
     :authentication => :plain
   }
