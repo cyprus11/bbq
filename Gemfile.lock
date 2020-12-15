@@ -81,6 +81,8 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    devise-i18n (1.9.2)
+      devise (>= 4.7.1)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
     erubi (1.10.0)
@@ -222,6 +224,7 @@ DEPENDENCIES
   carrierwave (~> 2.0)
   delayed_job_active_record
   devise (~> 4.7)
+  devise-i18n
   fog-aws
   mailgun-ruby (~> 1.1.6)
   pg
