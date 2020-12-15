@@ -81,15 +81,15 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'https://still-cliffs-65918.herokuapp.com/', port: 443 }
   config.action_mailer.delivery_method = :mailjet
   # settings for mailjet
-  # ActionMailer::Base.smtp_settings = {
-  #   :port           => ENV['MAILJET_SMTP_PORT'],
-  #   :address        => ENV['MAILJET_SMTP_SERVER'],
-  #   :user_name      => ENV['MAILJET_SMTP_LOGIN'],
-  #   :password       => ENV['MAILJET_SMTP_PASSWORD'],
-  #   :host           => 'https://still-cliffs-65918.herokuapp.com/',
-  #   :domain         => 'still-cliffs-65918.heroku.com',
-  #   :authentication => :plain
-  # }
+  ActionMailer::Base.smtp_settings = {
+    :port           => ENV['MAILJET_SMTP_PORT'],
+    :address        => ENV['MAILJET_SMTP_SERVER'],
+    # :user_name      => ENV['MAILJET_SMTP_LOGIN'],
+    # :password       => ENV['MAILJET_SMTP_PASSWORD'],
+    :host           => 'https://still-cliffs-65918.herokuapp.com/',
+    :domain         => 'still-cliffs-65918.heroku.com',
+    :authentication => :plain
+  }
 
   # config for Mailgun
   # ActionMailer::Base.smtp_settings = {
