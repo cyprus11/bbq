@@ -9,7 +9,8 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user_can_load_photo?(event)
-    user_signed_in? && event.subscriptions.include?(current_user)
+    user_signed_in? && event.subscriptions.pluck(:user_email).include?(current_user.email) ||
+      event.user == current_user
   end
 
   def current_user_can_edit?(model)
