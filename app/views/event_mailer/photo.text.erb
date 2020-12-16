@@ -6,6 +6,6 @@
 <%= t '.author' %>: <%= @photo.user.name %>
 
 ---------------------------------
-<%= t '.event' %>: <%= @event.title %>
+<%= t '.event' %>: <%= @event.title %>, <%= link_to event_path(@event) %>
 <%= t '.datetime' %>: <%= l @event.datetime %>
 <%= t '.owner' %>: <%= @event.user.name %>

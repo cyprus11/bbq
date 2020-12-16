@@ -86,24 +86,27 @@ ru:
       cancel: "Нет, я передумал."
   event_mailer:
     comment:
+      subject: "Новый комментарий @ %{title}"
       title: Новый комментарий
       author: Автор
       event: Событие
-      datetime: Состоится
+      datetime: Дата события
       owner: Организатор
     subscription:
+      subject: "Новая подписка @ %{title}"
       title: Новая подписка
       name: Имя
       email: Email
       author: Автор
       event: Событие
-      datetime: Состоится
+      datetime: Дата события
       owner: Организатор
     photo:
+      subject: "Новая фотография @ %{title}"
       title: Новая фотография
       author: Автор
       event: Событие
-      datetime: Состоится
+      datetime: Дата события
       owner: Организатор
   views:
     new_session_head: Вход

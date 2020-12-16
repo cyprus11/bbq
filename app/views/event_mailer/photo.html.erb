@@ -1,12 +1,12 @@
 <h1><%= t '.title' %></h1>
-<a href="<%= @photo.photo.url %>"><img src="<%= @photo.photo.thumb.url %>" alt="[фото]"></a>
+<%= link_to image_tag(@photo.photo.thumb.url), @photo.photo.url %>
 <p><%= t '.author' %>: <strong><%= @photo.user.name %></strong></p>
 
 <hr/>
 
 <%= t '.event' %>
 <h3>
-  <%= @event.title %>
+  <%= link_to @event.title, event_path(@event) %>
 </h3>
 
 <%= t '.datetime' %>
