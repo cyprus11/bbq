@@ -49,7 +49,7 @@
       <div class="event-comments buffer-top">
         <%= render partial: 'comments/form', locals: { comment: @new_comment || @event.comments.build } %>
         <div class="buffer-both">
-          <%= render @event.comments.except(@new_comment) %>
+          <%= render @event.comments.order(created_at: :desc).except(@new_comment) %>
         </div>
       </div>
     </div>
