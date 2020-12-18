@@ -3,6 +3,16 @@
               photo.photo.url,
               'alwaysShowClose' => 'true',
               'data-toggle' => 'lightbox',
-              'data-gallery' => 'event-gallery' %>
-  <%= render partial: 'users/user', object: photo.user %>
+              'data-gallery' => 'event-gallery',
+              'data-title' => "
+              <p style='float: left; margin-right: 10px;'>#{t('views.photos.added')}</p>
+              #{render partial: 'users/user', object: photo.user}
+              #{link_to(
+                fa_icon('times'), event_photo_path(photo.event, photo),
+                method: :delete, data: {
+                title: t('.title'),
+                confirm: t('.destroy_confirm'),
+                commit: t('comments.comment.commit'),
+                cancel: t('comments.comment.cancel') })}"
+  %>
 </div>

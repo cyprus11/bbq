@@ -86,6 +86,12 @@ ru:
       destroy_confirm: 'Вы уверены, что хотите отписаться от события?'
       commit: "Да, конечно."
       cancel: "Нет, я передумал."
+  photos:
+    photo:
+      title: Удаление фотографии.
+      destroy_confirm: 'Вы уверены, что хотите удалить фото?'
+      commit: "Да, конечно."
+      cancel: "Нет, я передумал."
   event_mailer:
     comment:
       subject: "Новый комментарий @ %{title}"
@@ -114,6 +120,8 @@ ru:
     events:
       password_form_header: Доступ только по пинкоду
       pincode: Пинкод
+    photos:
+      added: Добавил
     main: На главную
     new_session_head: Вход
     new_session: Войти
