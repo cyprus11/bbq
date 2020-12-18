@@ -33,6 +33,7 @@ ru:
         address: Адрес
         description: Описание
         datetime: Дата
+        pincode: Пинкод доступа
       subscription:
         user: Пользователь
         user_name: Имя
@@ -47,6 +48,7 @@ ru:
       created: Событие успешно создано.
       updated: Событие успешно обновлено.
       destroyed: Событие удалено.
+      wrong_pincode: Неверный пинкод!
     users:
       updated: Данные профиля успешно обновлены.
     comments:
@@ -109,6 +111,9 @@ ru:
       datetime: Дата события
       owner: Организатор
   views:
+    events:
+      password_form_header: Доступ только по пинкоду
+    main: На главную
     new_session_head: Вход
     new_session: Войти
     new_registration: Зарегистрироваться
