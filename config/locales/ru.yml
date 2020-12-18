@@ -113,6 +113,7 @@ ru:
   views:
     events:
       password_form_header: Доступ только по пинкоду
+      pincode: Пинкод
     main: На главную
     new_session_head: Вход
     new_session: Войти
