@@ -1,5 +1,8 @@
-<div class="event-photo buffer-both">
+<div class="col-md-4 event-photo buffer-both">
   <%= link_to image_tag(photo.photo.thumb.url, class: "img-fluid"),
-              photo.photo.url, 'data-toggle' => 'lightbox'  %>
-  Добавил <%= render partial: 'users/user', object: photo.user %>
+              photo.photo.url,
+              'alwaysShowClose' => 'true',
+              'data-toggle' => 'lightbox',
+              'data-gallery' => 'event-gallery' %>
+  <%= render partial: 'users/user', object: photo.user %>
 </div>

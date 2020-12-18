@@ -41,7 +41,7 @@
   <div class="row">
     <div class="col-md-8">
       <div class="event-photos">
-        <div class="event-photos-gallery">
+        <div class="row event-photos-gallery">
           <%= render @event.photos.except(@new_photo) %>
         </div>
         <% if current_user_can_load_photo?(@event) %>

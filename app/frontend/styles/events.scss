@@ -52,6 +52,15 @@
   height: 400px;
 }
 
+.event-photo {
+  margin-top: 5px;
+  text-align: center;
+}
+
+.user-name > a {
+  font-size: .7em;
+}
+
 .map {
   display: flex;
   justify-content: center;
