@@ -68,7 +68,7 @@
           </div>
         </div>
       <% end %>
-      <% if @event.user != current_user %>
+      <% if show_subscribe_form?(@event) %>
         <div class="event-subscription-form">
           <h4>Я пойду:</h4>
           <div>

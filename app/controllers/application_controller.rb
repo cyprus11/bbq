@@ -3,9 +3,15 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user_can_edit?
   helper_method :current_user_can_load_photo?
+  helper_method :show_subscribe_form?
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:account_update, keys: [:password, :password_confirmation, :current_password])
+  end
+
+  def show_subscribe_form?(event)
+    !user_signed_in? ||
+      user_signed_in? && current_user != event.user && !current_user.subscriptions.pluck(:event_id).include?(event.id)
   end
 
   def current_user_can_load_photo?(event)
