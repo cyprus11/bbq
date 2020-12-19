@@ -13,6 +13,11 @@
 }
 
 .comment-info {
-  height: 2em;
+  height: auto;
   padding: 5px;
+}
+
+.comment-info > .user {
+  float: left;
+  margin-right: 10px;
 }

@@ -1,0 +1,15 @@
+<p style='float: left; margin-right: 10px;'>
+  <%= t('views.photos.added') %>
+</p>
+<%= render partial: 'users/user', object: photo.user %>
+<% if current_user == photo.user || current_user_can_edit?(photo.event) %>
+  <%= link_to(
+        fa_icon('times'),
+        event_photo_path(photo.event, photo),
+        method: :delete,
+        data: {
+          title: t('.title'),
+          confirm: t('.destroy_confirm'),
+          commit: t('comments.comment.commit'),
+          cancel: t('comments.comment.cancel') }) %>
+<% end %>

@@ -3,14 +3,12 @@
     <p><%= comment.body %></p>
   </div>
   <div class="comment-info">
-    <p>
+    <% if comment.user.present? %>
+      <%= render comment.user %>
+    <% else %>
+      <em><strong><%= comment.user_name %></strong></em>
+    <% end %>
     <span>
-      <% if comment.user.present? %>
-        <%= render comment.user %>
-      <% else %>
-        <em><strong><%= comment.user_name %></strong></em>
-      <% end %>
-    </span>
       <em><%= l comment.created_at, format: :short %></em>
       <% if current_user_can_edit?(comment) %>
         <%= link_to(
@@ -23,6 +21,6 @@
             }
             ) %>
       <% end %>
-    </p>
+        </span>
   </div>
 </div>
