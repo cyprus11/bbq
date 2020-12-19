@@ -2,6 +2,9 @@
 (с) goodprogrammer.ru
 Наши дополнительные стили для красивого оформления плитки событий
  */
+.event {
+  overflow: hidden;
+}
 
 .event-info {
   position: relative;
@@ -30,8 +33,14 @@
   -ms-filter: blur(5px);
 }
 
+.event-description {
+  padding-top: 10px;
+  padding-left: 15px;
+}
+
 .event-description * {
   color: white;
+  //margin: 15px;
 }
 
 .event-description a {
