@@ -121,6 +121,9 @@ ru:
       event: Событие
       datetime: Дата события
       owner: Организатор
+  events:
+    show:
+      wrong_pincode: Неверный пинкод
   views:
     events:
       password_form_header: Доступ только по пинкоду
