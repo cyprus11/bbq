@@ -4,7 +4,7 @@ class Photo < ApplicationRecord
 
   mount_uploader :photo, PhotoUploader
 
-  validates :photo, presence: true
+  validates :photo, presence: true, length: { minimum: 5 }
 
   scope :persisted, -> { where 'id IS NOT NULL' }
 end
