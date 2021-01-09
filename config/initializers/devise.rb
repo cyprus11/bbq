@@ -24,7 +24,7 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = ENV['MAILJET_DEFAULT_FROM']
+  config.mailer_sender = Rails.application.credentials.mailjet[:mailjet_default_from]
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
@@ -130,7 +130,6 @@ Devise.setup do |config|
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
-
   # Send a notification email when the user's password is changed.
   # config.send_password_change_notification = false
 
