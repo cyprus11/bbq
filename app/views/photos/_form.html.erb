@@ -3,10 +3,10 @@
 
   <div class="form-group">
     <%= f.label :photo %>
-    <%= f.file_field :photo %>
+    <%= f.file_field :photo, id: 'photo' %>
   </div>
 
   <div class="actions">
-    <%= f.submit 'Загрузить', class: 'btn btn-primary' %>
+    <%= f.submit 'Загрузить', id: 'submitButton' ,class: 'btn btn-primary' %>
   </div>
 <% end %>
