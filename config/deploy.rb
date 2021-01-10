@@ -1,8 +1,8 @@
 # config valid for current version and patch releases of Capistrano
 lock "3.15.0"
 
-set :application, "bbq"
-set :repo_url, "git@github.com:cyprus11/bbq.git"
+set :application, Rails.application.credentials.capistrano[:application]
+set :repo_url, Rails.application.credentials.capistrano[:repo_url]
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
