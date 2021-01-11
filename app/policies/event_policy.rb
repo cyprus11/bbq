@@ -6,11 +6,11 @@ class EventPolicy < ApplicationPolicy
   end
 
   def create?
-    @user.present?
+    user.present?
   end
 
   def edit?
-    @user.present? && @user.events.include?(record)
+    user.present? && user.events.include?(record)
   end
 
   def update?
