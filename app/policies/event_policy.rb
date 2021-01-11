@@ -8,11 +8,11 @@ class EventPolicy < ApplicationPolicy
   end
 
   def update?
-    user.present? && user.events.include?(record)
+    edit?
   end
 
   def destroy?
-    user.present? && user.events.include?(record)
+    edit?
   end
 
   class Scope < Scope
