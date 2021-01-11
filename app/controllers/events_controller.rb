@@ -1,33 +1,32 @@
 class EventsController < ApplicationController
-  before_action :authenticate_user!, except: [:show, :index]
-  before_action :set_event, only: [:show]
-  before_action :set_current_user_event, only: [:edit, :update, :destroy]
+  # before_action :authenticate_user!, except: [:show, :index]
+  # before_action :set_event, only: [:show]
+  before_action :set_event, except: [:index, :new, :create]
+  # before_action :set_current_user_event, only: [:edit, :update, :destroy]
   before_action :password_guard!, only: [:show]
 
-  # GET /events
   def index
     @events = Event.all
   end
 
-  # GET /events/1
   def show
     @new_comment = @event.comments.build(params[:comment])
     @new_subscription = @event.subscriptions.build(params[:subscription])
     @new_photo = @event.photos.build(params[:photo])
   end
 
-  # GET /events/new
   def new
+    authorize Event
     @event = current_user.events.build
   end
 
-  # GET /events/1/edit
   def edit
+    authorize @event
   end
 
-  # POST /events
   def create
     @event = current_user.events.build(event_params)
+    authorize @event
 
     if @event.save
       redirect_to @event, notice: I18n.t('controllers.events.created')
@@ -36,8 +35,8 @@ class EventsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /events/1
   def update
+    authorize @event
     if @event.update(event_params)
       redirect_to @event, notice: t('controllers.events.updated')
     else
@@ -45,8 +44,8 @@ class EventsController < ApplicationController
     end
   end
 
-  # DELETE /events/1
   def destroy
+    authorize @event
     @event.destroy
     redirect_to root_path, notice: t('controllers.events.destroyed')
   end
@@ -75,7 +74,6 @@ class EventsController < ApplicationController
     @event = current_user.events.find(params[:id])
   end
 
-  # Only allow a trusted parameter "white list" through.
   def event_params
     params.require(:event).permit(:title, :address, :datetime, :description, :pincode)
   end
