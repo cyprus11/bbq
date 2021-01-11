@@ -1,10 +1,16 @@
 class EventPolicy < ApplicationPolicy
+  def show?
+    (record.pincode.blank? ||
+      (user.present? && user == record.user)) ||
+      record.pincode_valid?(cookies["events_#{record.id}_pincode"])
+  end
+
   def create?
-    user.present?
+    @user.present?
   end
 
   def edit?
-    user.present? && user.events.include?(record)
+    @user.present? && @user.events.include?(record)
   end
 
   def update?
