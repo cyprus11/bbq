@@ -20,6 +20,7 @@ gem 'webpacker', '~> 4.0'
 group :development, :test do
   gem 'sqlite3', '~> 1.4'
   gem 'pry'
+  gem 'rspec-rails', '~> 4.0.2'
 end
 
 group :development do

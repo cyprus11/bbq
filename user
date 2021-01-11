@@ -1,0 +1,15 @@
+
+[1mFrom:[0m /home/alexey/Документы/ror/goodprogrammer/projects/bbq/spec/policies/event_policy_spec.rb:26 :
+
+    [1;34m21[0m:   context [31m[1;31m"[0m[31medit update destroy event[1;31m"[0m[31m[0m [32mdo[0m
+    [1;34m22[0m:     let([33m:event[0m) { [1;34;4mEvent[0m.new([35muser[0m: user) }
+    [1;34m23[0m:     let([33m:other_user[0m) { [1;34;4mUser[0m.new }
+    [1;34m24[0m: 
+    [1;34m25[0m:     permissions [33m:edit?[0m [32mdo[0m
+ => [1;34m26[0m:       binding.pry
+    [1;34m27[0m:       it { is_expected.to permit(user, event) }
+    [1;34m28[0m:       it { is_expected.not_to permit([1;36mnil[0m, event) }
+    [1;34m29[0m:       it { is_expected.not_to permit(other_user, event) }
+    [1;34m30[0m:     [32mend[0m
+    [1;34m31[0m: 
+
