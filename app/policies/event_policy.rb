@@ -10,7 +10,7 @@ class EventPolicy < ApplicationPolicy
   end
 
   def edit?
-    user.present? && user.events.include?(record)
+    user.present? && record.user == user
   end
 
   def update?
