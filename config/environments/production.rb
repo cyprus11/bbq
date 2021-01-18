@@ -73,7 +73,8 @@ Rails.application.configure do
   end
 
   # config active job
-  config.active_job.queue_adapter = :delayed_job
+  config.active_job.queue_adapter = :resque
+  config.active_job.queue_name_prefix = "bbq_#{Rails.env}"
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false

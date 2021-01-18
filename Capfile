@@ -38,6 +38,7 @@ require 'capistrano/rails'
 require 'capistrano/passenger'
 require 'capistrano/rbenv'
 require 'capistrano/bundler'
+require 'capistrano-resque'
 set :rbenv_type, :user
 set :rbenv_ruby, '2.7.2'
 

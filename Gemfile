@@ -14,6 +14,7 @@ gem 'delayed_job_active_record'
 gem 'devise-i18n'
 gem 'rmagick'
 gem 'fog-aws'
+gem 'resque'
 gem 'puma', '~> 4.1'
 gem 'webpacker', '~> 4.0'
 
@@ -29,6 +30,8 @@ group :development do
   gem 'capistrano-passenger'
   gem 'capistrano-rbenv', '~> 2.2'
   gem 'capistrano-bundler', '~> 2.0'
+  gem "capistrano-resque", "~> 0.2.3", require: false
+  gem 'letter_opener'
 end
 
 group :production do
