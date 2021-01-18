@@ -34,7 +34,7 @@ class PhotosController < ApplicationController
         [event.user.email]).uniq - [photo.user.email]
 
     all_email.each do |mail|
-      EmailNewPhotoJob.set(wait: 5.seconds).perform_later(event, photo, mail)
+      EmailNewPhotoJob.perform_later(event, photo, mail)
       # EventMailer.photo(event, photo, mail).deliver_now
     end
   end
