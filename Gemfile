@@ -15,6 +15,7 @@ gem 'devise-i18n'
 gem 'rmagick'
 gem 'fog-aws'
 gem 'resque'
+gem 'resque-scheduler'
 gem 'puma', '~> 4.1'
 gem 'webpacker', '~> 4.0'
 

@@ -334,6 +334,7 @@ DEPENDENCIES
   rails (~> 6.0.3, >= 6.0.3.4)
   rails-i18n (~> 6.0.0)
   resque
+  resque-scheduler
   rmagick
   rspec-rails (~> 4.0.2)
   sqlite3 (~> 1.4)
