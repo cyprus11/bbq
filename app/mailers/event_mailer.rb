@@ -5,8 +5,7 @@ class EventMailer < ApplicationMailer
     @event = event
 
     mail to: event.user.email,
-         subject: t('.subject', title: @event.title),
-         from: Rails.application.credentials.mailjet[:mailjet_default_from]
+         subject: t('.subject', title: @event.title)
   end
 
   def comment(event, comment, email)
@@ -14,8 +13,7 @@ class EventMailer < ApplicationMailer
     @event = event
 
     mail to: email,
-         subject: t('.subject', title: @event.title),
-         from: Rails.application.credentials.mailjet[:mailjet_default_from]
+         subject: t('.subject', title: @event.title)
   end
 
   def photo(event, photo, email)
@@ -23,7 +21,6 @@ class EventMailer < ApplicationMailer
     @photo = photo
 
     mail to: email,
-         subject: t('.subject', title: @event.title),
-         from: Rails.application.credentials.mailjet[:mailjet_default_from]
+         subject: t('.subject', title: @event.title)
   end
 end
