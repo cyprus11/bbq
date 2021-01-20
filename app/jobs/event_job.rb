@@ -18,8 +18,8 @@ class EventJob < ApplicationJob
         (@event.subscriptions.pluck(:user_email) +
           [@event.user.email]).uniq - [@photo.user.email]
 
-      all_email.each do
-        EventMailer.photo(@event, @photo, @email).deliver_later
+      all_email.each do |mail|
+        EventMailer.photo(@event, @photo, mail).deliver_later
       end
     when 'Comment'
       @event = args[:event]
@@ -32,8 +32,8 @@ class EventJob < ApplicationJob
           [@event.user.email]) -
         [@email]
 
-      all_email.each do
-        EventMailer.comment(@event, @comment, @email).deliver_later
+      all_email.each do |mail|
+        EventMailer.comment(@event, @comment, mail).deliver_later
       end
     end
   end
