@@ -8,7 +8,6 @@ class PhotosController < ApplicationController
 
     if @new_photo.save
       EventJob.perform_later(event: @event, action: @new_photo)
-      notify_subscribers(@event, @new_photo)
       redirect_to @event, notice: t('controllers.photos.created')
     else
       render 'events/show', alert: t('controllers.photos.error')

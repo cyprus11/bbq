@@ -8,7 +8,6 @@ class SubscriptionsController < ApplicationController
 
     if @new_subscription.save
       EventJob.perform_later(event: @event, action: @new_subscription)
-      # EventMailer.subscription(@event, @new_subscription).deliver_now
       redirect_to @event, notice: t('controllers.subscription.created')
     else
       render 'events/show', notice: t('controllers.subscription.error')
