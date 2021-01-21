@@ -2,14 +2,13 @@ class EventJob < ApplicationJob
   queue_as :default
 
   def perform(args)
-    action_type = args[:action].class.name
-    case action_type
-    when 'Subscription'
+    case args[:action]
+    when Subscription
       event = args[:event]
       subscription = args[:action]
 
       EventMailer.subscription(event, subscription).deliver_later
-    when 'Photo'
+    when Photo
       event = args[:event]
       photo = args[:action]
 
@@ -20,16 +19,15 @@ class EventJob < ApplicationJob
       all_email.each do |mail|
         EventMailer.photo(event, photo, mail).deliver_later
       end
-    when 'Comment'
+    when Comment
       event = args[:event]
       comment = args[:action]
       email = comment.user&.email
 
       all_email =
-        (event.subscriptions.pluck(:user_email) |
-          event.subscriptions.map(&:user_email) |
+        (event.subscriptions.map(&:user_email) |
           [event.user.email]) -
-        [email]
+          [email]
 
       all_email.each do |mail|
         EventMailer.comment(event, comment, mail).deliver_later
