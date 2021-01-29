@@ -37,7 +37,6 @@ group :development do
   gem 'capistrano-bundler', '~> 2.0'
   gem "capistrano-resque", "~> 0.2.3", require: false
   gem 'letter_opener'
-  gem 'pry'
 end
 
 group :production do
