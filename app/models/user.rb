@@ -14,10 +14,6 @@ class User < ApplicationRecord
 
   mount_uploader :avatar, AvatarUploader
 
-  def send_devise_notification(notification, *args)
-    devise_mailer.send(notification, self, *args).deliver_later
-  end
-
   def self.find_for_oauth(token)
     email = token.info.email
     user = where(email: email).first
@@ -42,6 +38,10 @@ class User < ApplicationRecord
       user.remote_avatar_url = image
       user.password = Devise.friendly_token.first(16)
     end
+  end
+
+  def send_devise_notification(notification, *args)
+    devise_mailer.send(notification, self, *args).deliver_later
   end
 
   private
