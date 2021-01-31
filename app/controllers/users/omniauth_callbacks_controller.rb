@@ -9,9 +9,9 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   private
 
-  def oauth(params)
-    @user = User.find_for_oauth(params[:request])
-    provider = params[:provider]
+  def oauth(args)
+    @user = User.find_for_oauth(args[:request])
+    provider = args[:provider]
 
     if @user.persisted?
       flash[:notice] = t('devise.omniauth_callbacks.success', kind: provider)
