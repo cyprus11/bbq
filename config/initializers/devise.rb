@@ -17,7 +17,9 @@ Devise.setup do |config|
 
   config.omniauth :facebook, Rails.application.credentials.facebook[:app_id],
                   Rails.application.credentials.facebook[:app_secret_key],
-                  display: "popup"
+                  display: "popup",
+                  secure_image_url: true
+
   config.omniauth :vkontakte, Rails.application.credentials.vkontakte[:app_id],
                   Rails.application.credentials.vkontakte[:app_secret_key],
                   scope: 'email,photos',
