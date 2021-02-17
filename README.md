@@ -1,24 +1,46 @@
-# README
+# Приложение "Шашлыки".
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+В данном приложении вы можете создавать "События", на которые могут подписываться как 
+ваши друзья, так и другие, желающие поучавстовать люди.
 
-Things you may want to cover:
+Если же вы хотите, чтобы доступ имели только друзья, то можете защитить доступ к событию при 
+помощи пин-кода.
 
-* Ruby version
+Данное приложение реализовано на языке Ruby 2.7.2 и RoR 6.0.
 
-* System dependencies
+### Запуск приложения
 
-* Configuration
+1. Скопируйте приложение:
 
-* Database creation
+```
+$ git clone git@github.com:cyprus11/bbq.git
+```
 
-* Database initialization
+Или просто скачайте его на свой компьютер.
 
-* How to run the test suite
+2. Установите необходимые гемы, создайте базу данных и сделайте необходимые миграции
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+$ bundle
+$ rails db:create
+$ rails db:migrate
+```
 
-* Deployment instructions
+3. Запустите приложение:
 
-* ...
+3.1 Выполните в двух отдельных окнах терминала
+
+```
+$ bin/webpack-dev-server
+```
+```
+$ rails s
+```
+
+3.2 Либо при помощие гема foreman
+
+```
+$ foreman start
+```
+
+Так же можете посмотреть рабочий вариант по ссылке: [https://tav-dev.tk](https://tav-dev.tk)

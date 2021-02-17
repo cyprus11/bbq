@@ -14,6 +14,7 @@ class User < ApplicationRecord
 
   mount_uploader :avatar, AvatarUploader
 
+  # Метод для обработки информации из JSON для oauth
   def self.find_for_oauth(token)
     email = token.info.email
     user = where(email: email).first
