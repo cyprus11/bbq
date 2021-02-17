@@ -22,8 +22,28 @@ $ git clone git@github.com:cyprus11/bbq.git
 
 ```
 $ bundle
+$ yarn
 $ rails db:create
 $ rails db:migrate
+```
+
+2.1 Так же для работы приложения
+вам необходимо добавить токены от таких сервисов, как:
+
+Яндекс карты
+
+Вконтакте
+
+Facebook
+
+Mailjet
+
+Amazon AWS
+
+Добавить их необходимо в credentials, при помощи команды
+
+```
+rails credentials:edit
 ```
 
 3. Запустите приложение:
