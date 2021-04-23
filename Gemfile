@@ -22,6 +22,8 @@ gem 'omniauth-facebook'
 gem 'omniauth-vkontakte'
 gem 'puma', '~> 4.1'
 gem 'webpacker', '~> 4.0'
+gem 'bcrypt_pbkdf', '>= 1.0', '< 2.0'
+gem 'ed25519',  '>= 1.2', '< 2.0'
 
 group :development, :test do
   gem 'sqlite3', '~> 1.4'
