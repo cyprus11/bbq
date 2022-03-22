@@ -16,10 +16,10 @@ Devise.setup do |config|
   config.sign_out_via = :delete
 
   # omniauth for facebook
-  config.omniauth :facebook, Rails.application.credentials.facebook[:app_id],
-                  Rails.application.credentials.facebook[:app_secret_key],
-                  display: "popup",
-                  secure_image_url: true
+  # config.omniauth :facebook, Rails.application.credentials.facebook[:app_id],
+  #                 Rails.application.credentials.facebook[:app_secret_key],
+  #                 display: "popup",
+  #                 secure_image_url: true
 
   # omniauth for vkontakte
   config.omniauth :vkontakte, Rails.application.credentials.vkontakte[:app_id],
